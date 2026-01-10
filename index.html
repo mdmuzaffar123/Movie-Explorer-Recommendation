@@ -1,0 +1,167 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="horizontal-menu" id="horizontalMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <h2>🎬 Movie Explorer</h2>
+  
+  <div class="movie-names">
+    <span class="movie-tag" style="background-color: #e43b3b;">Web Series</span>
+    <span class="movie-tag" style="background-color: #431be3;">Movies</span>
+    <span class="movie-tag" style="background-color: #45B7D1;">Hollywood</span>
+    <span class="movie-tag" style="background-color: #FFA502;">Korean</span>
+    <span class="movie-tag" style="background-color: #10b63c;">18+ web Series</span>
+    <span class="movie-tag" style="background-color: #720574;">Animation Movies</span>
+  </div>
+  <div class="nav-buttons">
+    <button id="loginButton">Login</button>
+    <button id="registerButton">Register</button>
+    <div class="user-profile-container">
+      <div class="user-profile-circle" id="userProfileCircle">👤</div>
+      <div class="user-dropdown" id="userDropdown">
+        <div class="user-info">
+          <img src="Images/Profile.jpg" alt="User" class="user-avatar">
+          <div>
+            <p class="username">Md Muzaffar</p>
+            <p class="user-email">muzaffar767@gmail.com</p>
+          </div>
+        </div>
+        <hr>
+        <button class="logout-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SIDEBAR MENU -->
+<div class="sidebar" id="sidebar">
+  <button class="close-sidebar" onclick="toggleSidebar()">×</button>
+  <ul class="sidebar-menu">
+    <li><a href="#ticket-booking" onclick="toggleSidebar()">🎫 Ticket Booking (PVR)</a></li>
+    <li><a href="#snacks-order" onclick="toggleSidebar()">🍿 Snacks Order</a></li>
+    <li><a href="#payment-method" onclick="toggleSidebar()">💳 Payment Methods</a></li>
+    <li><a href="#membership" onclick="toggleSidebar()">👑 Membership Plans</a></li>
+    <li><a href="#support" onclick="toggleSidebar()">📞 Customer Support</a></li>
+    <li><a href="#logout" onclick="toggleSidebar()"> Logout</a></li>
+  </ul>
+</div>
+
+<!-- BACK BUTTON -->
+<div id="backButtonContainer" style="display: none; position: fixed; top: 70px; left: 20px; z-index: 100;">
+  <button id="backButton" onclick="goBack()" class="back-button">← Back</button>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="overlay">
+    <div id="heroContent">
+      <h1>Discover Movies</h1>
+      <p>Search, explore & get movie recommendations</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search movie Name..." />
+        <button onclick="searchMovie()">Search</button>
+      </div>
+
+      <div class="filters">
+        <select id="sortSelect" onchange="sortMovies()">
+          <option value="value">Sort By</option>
+          <option value="year">Release Year</option>
+          <option value="rating">IMDb Rating</option>
+        </select>
+      </div>
+    </div>
+    <div id="heroResults" style="display: none;"></div>
+  </div>
+</section>
+
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <span onclick="closeModal('loginModal')">&times;</span>
+    <h2>Login</h2>
+    <input type="email" placeholder="Email / Mobile Number" />
+    <input type="password" placeholder="Password" />
+    <button type="login">Login</button>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <span onclick="closeModal('registerModal')">&times;</span>
+    <h2>Register</h2>
+    <input type="text" placeholder="Name" />
+    <input type="number" placeholder="D.O.B" />
+    <input type="" placeholder="Moble Number" />
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <button>Register</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#series">Web Series</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>About</h3>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#hollywood">Hollywood</a></li>
+        <li><a href="#korean">Korean</a></li>
+        <li><a href="#bollywood">Bollywood</a></li>
+        <li><a href="#18+">18+ Web Series</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#terms">Terms & Conditions</a></li>
+        <li><a href="#dmca">DMCA</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Movie Explorer. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
