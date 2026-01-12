@@ -549,7 +549,7 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .hero h1 {
         font-size: 24px;
     }
