@@ -556,6 +556,10 @@ body {
 
     .horizontal-menu {
         display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-right: 10px;
+        
     }
 
     .navbar {
